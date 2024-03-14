@@ -1,0 +1,1 @@
+import{_ as e,c as s,o,b as t}from"./index-B9F0_B41.js";const c={},n={class:"videos"},_=t("h1",null,"This is the videos page",-1),a=[_];function i(r,d){return o(),s("main",n,a)}const l=e(c,[["render",i]]);export{l as default};
