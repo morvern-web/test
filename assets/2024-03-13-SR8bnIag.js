@@ -1,0 +1,1 @@
+const e="2024-03-13",t="New music coming soon",n="An E.P. containing 5 brand new tracks will be released on 21 June 2024<br />to Bandcamp and streaming services.<br /><br />Keep watching the skies!",s={date:e,title:t,text:n};export{e as date,s as default,n as text,t as title};
