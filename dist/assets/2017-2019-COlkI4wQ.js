@@ -1,0 +1,1 @@
+const a=[{date:"2017-09-21",venue:"KUD Channel Zero",location:"Ljubljana, Slovenia",info:"w/ Svemirko"},{date:"2018-12-27",venue:"Gala Hala",location:"Ljubljana, Slovenia",info:"Domorodni četrtki"},{date:"2019-02-12",venue:"Klub Gromka",location:"Ljubljana, Slovenia",info:"w/ Žblj Mozaik & Rush to Relax"}];export{a as default};
