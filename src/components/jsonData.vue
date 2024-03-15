@@ -4,36 +4,50 @@
 export default {
   data() {
     return {
-      news: [],
-      music: [],
-      live: [],
-      photos: [],
-      videos: [],
-      links: [],
+      newsData: [],
+      musicData: [],
+      liveData: [],
+      videoData: [],
+      linkData: [],
     };
   },
 
   mounted() {
-    Object.keys(this.$data).forEach((i) => {
+    [
+      'newsData',
+      'musicData',
+      'liveData',
+      'videoData',
+      'linkData',
+    ].forEach((i) => {
       this.getData(i);
     });
   },
 
   methods: {
     getData(type) {
-      const json = (type === 'music')
+      if (!type) {
+        return;
+      }
+      const json = (type === 'musicData')
         ? import.meta.glob('../content/music/*.json')
-        : (type === 'live')
+        : (type === 'liveData')
           ? import.meta.glob('../content/live/*.json')
-          : (type === 'videos')
+          : (type === 'videoData')
             ? import.meta.glob('../content/videos/*.json')
-            : (type === 'links')
+            : (type === 'linkData')
               ? import.meta.glob('../content/links.json')
               : import.meta.glob('../content/news/*.json');
 
       for (const path in json) {
         json[path]().then((mod) => {
-          this[type].push({ ...mod });
+
+          if (!Array.isArray(mod.default)) {
+            this[type].push(mod.default);
+          } else {
+            mod.default.forEach((i) => { this[type].push(i); });
+          }
+
           this[type].sort((a, b) => {
             return (a.date < b.date) ? 1 : (a.date > b.date) ? -1 : 0;
           });

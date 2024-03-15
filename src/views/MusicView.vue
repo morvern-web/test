@@ -1,6 +1,6 @@
 <template>
   <main class="music-container">
-    <div v-for="album in music">
+    <div v-for="album in musicData">
       <div
         class="album-artwork"
         :class="[

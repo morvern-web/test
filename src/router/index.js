@@ -19,11 +19,6 @@ const router = createRouter({
       name: 'live',
       component: () => import('../views/LiveView.vue')
     },
-    // {
-    //   path: '/photos',
-    //   name: 'photos',
-    //   component: () => import('../views/PhotosView.vue')
-    // },
     {
       path: '/videos',
       name: 'videos',

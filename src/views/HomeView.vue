@@ -1,11 +1,11 @@
 <template>
   <main>
     <div class="home-title">
-      {{ news[0]?.title?.toUpperCase() }}
+      {{ newsData[0]?.title?.toUpperCase() }}
     </div>
 
     <div
-      v-html="news[0]?.text"
+      v-html="newsData[0]?.text"
       class="home-text"
     />
   </main>

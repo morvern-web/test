@@ -36,7 +36,7 @@
   <footer>
     <div class="footer-container">
       <MrvIcons
-        :icons="links[0]?.default"
+        :icons="linkData[0]"
         size="footer"
       />
       <div>
