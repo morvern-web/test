@@ -4,7 +4,7 @@
       <div
         class="album-artwork"
         :class="[
-          `${album.title.toLowerCase().replaceAll(' ', '')}`,
+          getClass(album.title),
           { 'selected': isSelected(album) }
         ]"
         @click="albumClick(album)"
@@ -38,6 +38,12 @@ export default {
   },
 
   computed: {
+    getClass() {
+      return (title) => {
+        return title.toLowerCase().replaceAll(' ', '').replace(/[.,'()]/g, '');
+      };
+    },
+
     isSelected() {
       return (album) => album === this.selectedAlbum;
     },

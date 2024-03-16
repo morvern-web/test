@@ -5,7 +5,7 @@
         <div class="album-artwork-container">
           <div
             class="album-artwork"
-            :class="`${album.title.toLowerCase().replaceAll(' ', '')}`"
+            :class="getClass(album.title)"
           />
           <MrvIcons
             :icons="albumOptions(album)"
@@ -96,6 +96,12 @@ export default {
   },
 
   computed: {
+    getClass() {
+      return (title) => {
+        return title.toLowerCase().replaceAll(' ', '').replace(/[.,'()]/g, '');
+      };
+    },
+
     albumOptions() {
       return (album) => {
         const options = ['bandcamp', 'spotify', 'applemusic', 'deezer'];

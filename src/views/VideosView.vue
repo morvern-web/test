@@ -49,7 +49,7 @@ export default {
   computed: {
     getClass() {
       return (title) => {
-        return title.toLowerCase().replaceAll(' ', '').replace(/[.,()0-9]/g, '');
+        return title.toLowerCase().replaceAll(' ', '').replace(/[.,'()0-9]/g, '');
       };
     },
 

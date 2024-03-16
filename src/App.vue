@@ -16,6 +16,12 @@
         >
           {{ route.name }}
         </div>
+        <div
+          class="navigation-item"
+          @click="headerClick('merch')"
+        >
+          merch
+        </div>
       </div>
     </div>
   </header>
@@ -89,6 +95,10 @@ export default {
 
   methods: {
     headerClick(route = null) {
+      if (route === 'merch') {
+        window.open('https://morvern.bandcamp.com/merch', '_blank');
+      }
+
       if (!route) {
         route = this.routes.find((x) => x.name === 'home');
       }
