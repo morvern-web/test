@@ -34,7 +34,7 @@ export default {
         : (type === 'liveData')
           ? import.meta.glob('../content/live/*.json')
           : (type === 'videoData')
-            ? import.meta.glob('../content/videos/*.json')
+            ? import.meta.glob('../content/videos.json')
             : (type === 'linkData')
               ? import.meta.glob('../content/links.json')
               : import.meta.glob('../content/news/*.json');

@@ -62,7 +62,7 @@ export default {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   grid-template-rows: repeat(2, 1fr);
-  grid-gap: 50px;
+  grid-gap: 75px;
 
   .album-artwork {
     cursor: pointer;
@@ -83,7 +83,7 @@ export default {
   grid-row: 1 / 1;
   grid-column: 1 / 1;
 }
-.music-container > *:first-child{
+.music-container > *:first-child {
   grid-row: 1 / 1;
   grid-column: 1 / 1;
 }

@@ -10,6 +10,7 @@ import MrvAlbum from './components/MrvAlbum.vue';
 import MrvAlbumEmbed from './components/MrvAlbumEmbed.vue';
 import MrvIcons from './components/MrvIcons.vue';
 import MrvOverlay from './components/MrvOverlay.vue';
+import MrvVideo from './components/MrvVideo.vue';
 
 const app = createApp(App);
 
@@ -20,6 +21,7 @@ app
   .component('MrvAlbum', MrvAlbum)
   .component('MrvAlbumEmbed', MrvAlbumEmbed)
   .component('MrvIcons', MrvIcons)
-  .component('MrvOverlay', MrvOverlay);
+  .component('MrvOverlay', MrvOverlay)
+  .component('MrvVideo', MrvVideo);
 
 app.mount('#app');

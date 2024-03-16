@@ -98,6 +98,7 @@ export default {
     .live-date-group {
       margin-bottom: 25px;
       .live-date-header {
+        padding-left: 5px;
         padding-bottom: 5px;
         border-bottom: 2px solid grey;
         font-size: 1.5rem;

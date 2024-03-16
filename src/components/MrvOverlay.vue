@@ -10,7 +10,9 @@
           class="overlay-container"
         >
           <div class="overlay">
-            <slot />
+            <div class="overlay-content">
+              <slot />
+            </div>
           </div>
 
           <div
@@ -60,11 +62,13 @@ export default {
   height: 100%;
   padding: 50px;
   background: fade(black, 80%);
+  display: flex;
+  flex-direction: column;
 
   .overlay-container {
     position: relative;
+    width: 90%;
     max-width: 1000px;
-    max-height: 100%;
     margin: auto;
     background: fade(grey, 70%);
     border-radius: 20px;
@@ -72,7 +76,12 @@ export default {
     overflow: hidden;
 
     .overlay {
-      overflow: scroll;
+      height: 100%;
+      overflow: hidden;
+      .overlay-content {
+        height: 100%;
+        overflow: scroll;
+      }
     }
 
     .overlay-close-btn {

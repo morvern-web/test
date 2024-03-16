@@ -144,9 +144,9 @@ export default {
   }
   .deezer {
     &:before {
-      height: calc(100% - 12px);
-      width: calc(100% - 12px);
-      top: 5px;
+      height: calc(100% - 10px);
+      width: calc(100% - 10px);
+      top: 6px;
       left: 5px;
       -webkit-mask-image: url('@/assets/icons/deezer.svg');
       mask-image: url('@/assets/icons/deezer.svg');
@@ -160,6 +160,10 @@ export default {
   }
   .linktree {
     &:before {
+      height: calc(100% - 8px);
+      width: calc(100% - 8px);
+      top: 4px;
+      left: 4px;
       -webkit-mask-image: url('@/assets/icons/linktree.svg');
       mask-image: url('@/assets/icons/linktree.svg');
     }
@@ -203,10 +207,10 @@ export default {
 
     &.deezer {
       &:before {
-        height: calc(100% - 9px);
-        width: calc(100% - 9px);
+        height: calc(100% - 6px);
+        width: calc(100% - 6px);
         top: 4px;
-        left: 4px;
+        left: 3px;
       }
     }
 

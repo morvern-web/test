@@ -104,6 +104,11 @@ export default {
 
       this.$router.push(route.path);
       this.currentRouteName = route.name;
+
+      setTimeout(() => {
+        const contentContainer = document.querySelector('.content-container');
+        contentContainer.scrollTo(0, 0);
+      }, 100);
     },
 
     footerClick(url) {
