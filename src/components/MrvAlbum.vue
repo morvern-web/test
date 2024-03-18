@@ -5,7 +5,7 @@
         <div class="album-artwork-container">
           <img
             class="album-artwork"
-            :src="`src/assets/music/${getSrc(album.title)}.jpg`"
+            :src="getImgSrc(album.title)"
           />
           <MrvIcons
             :icons="albumOptions(album)"
@@ -79,8 +79,12 @@
 </template>
 
 <script>
+import assetData from '@/components/assetData.vue';
+
 export default {
   name: 'MrvAlbum',
+
+  mixins: [assetData],
 
   props: {
     album: {
@@ -96,12 +100,6 @@ export default {
   },
 
   computed: {
-    getSrc() {
-      return (title) => {
-        return title.toLowerCase().replaceAll(' ', '').replace(/[.,'()0-9]/g, '');
-      };
-    },
-
     albumOptions() {
       return (album) => {
         const options = ['bandcamp', 'spotify', 'applemusic', 'deezer'];

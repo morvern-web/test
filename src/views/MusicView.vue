@@ -6,7 +6,7 @@
         class="album-entry"
       >
         <img
-          :src="`src/assets/music/${getSrc(album.title)}.jpg`"
+          :src="getImgSrc(album.title)"
           class="album-artwork"
           @click="albumClick(album)"
         />
@@ -28,10 +28,11 @@
 </template>
 
 <script>
+import assetData from '@/components/assetData.vue';
 import jsonData from '@/components/jsonData.vue';
 
 export default {
-  mixins: [jsonData],
+  mixins: [assetData, jsonData],
 
   data() {
     return {
@@ -40,12 +41,6 @@ export default {
   },
 
   computed: {
-    getSrc() {
-      return (title) => {
-        return title.toLowerCase().replaceAll(' ', '').replace(/[.,'()0-9]/g, '');
-      };
-    },
-
     isSelected() {
       return (album) => album === this.selectedAlbum;
     },

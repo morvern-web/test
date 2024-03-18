@@ -4,7 +4,7 @@
       <div v-for="video in videoData">
         <div class="video-entry">
           <img
-            :src="`src/assets/videos/${getSrc(video.title)}.jpg`"
+            :src="getImgSrc(video.title, 'video')"
             class="video-artwork"
             @click="videoClick(video)"
           />
@@ -30,10 +30,11 @@
 </template>
 
 <script>
+import assetData from '@/components/assetData.vue';
 import jsonData from '@/components/jsonData.vue';
 
 export default {
-  mixins: [jsonData],
+  mixins: [assetData, jsonData],
 
   data() {
     return {
@@ -42,12 +43,6 @@ export default {
   },
 
   computed: {
-    getSrc() {
-      return (title) => {
-        return title.toLowerCase().replaceAll(' ', '').replace(/[.,'()0-9]/g, '');
-      };
-    },
-
     isSelected() {
       return (video) => video === this.selectedVideo;
     },

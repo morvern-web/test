@@ -29,6 +29,7 @@ export default {
       if (!type) {
         return;
       }
+
       const json = (type === 'musicData')
         ? import.meta.glob('../content/music/*.json')
         : (type === 'liveData')
