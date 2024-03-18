@@ -1,5 +1,5 @@
 <template>
-  <MrvOverlay @closeOverlay="$emit('closeOverlay')">
+  <MorvOverlay @closeOverlay="$emit('closeOverlay')">
     <template v-slot:default>
       <div class="video-container">
         <iframe
@@ -11,12 +11,12 @@
         ></iframe>
       </div>
     </template>
-  </MrvOverlay>
+  </MorvOverlay>
 </template>
 
 <script>
 export default {
-  name: 'MrvVideo',
+  name: 'MorvVideo',
 
   props: {
     id: {

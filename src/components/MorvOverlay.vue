@@ -27,7 +27,7 @@
 
 <script>
 export default {
-  name: 'MrvOverlay',
+  name: 'MorvOverlay',
 
   data() {
     return {

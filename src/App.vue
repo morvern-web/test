@@ -41,7 +41,7 @@
 
   <footer>
     <div class="footer-container">
-      <MrvIcons
+      <MorvIcons
         :icons="linkData[0]"
         size="footer"
       />
@@ -54,10 +54,10 @@
 
 <script>
 import { RouterLink, RouterView } from 'vue-router';
-import jsonData from '@/components/jsonData.vue';
+import JsonData from '@/components/JsonData.vue';
 
 export default {
-  mixins: [jsonData],
+  mixins: [JsonData],
 
   data() {
     return {

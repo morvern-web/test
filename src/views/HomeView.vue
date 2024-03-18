@@ -12,10 +12,10 @@
 </template>
 
 <script>
-import jsonData from '@/components/jsonData.vue';
+import JsonData from '@/components/JsonData.vue';
 
 export default {
-  mixins: [jsonData],
+  mixins: [JsonData],
 };
 </script>
 

@@ -1,5 +1,5 @@
 <template>
-  <MrvOverlay @closeOverlay="$emit('closeOverlay')">
+  <MorvOverlay @closeOverlay="$emit('closeOverlay')">
     <template v-slot:default>
       <div class="album-container">
         <div class="album-artwork-container">
@@ -7,7 +7,7 @@
             class="album-artwork"
             :src="getImgSrc(album.title)"
           />
-          <MrvIcons
+          <MorvIcons
             :icons="albumOptions(album)"
             :selected="selectedOption"
             @click="optionClick"
@@ -65,7 +65,7 @@
                 </ul>
               </div>
 
-              <MrvAlbumEmbed
+              <MorvAlbumEmbed
                 v-else
                 :album="album"
                 :selectedOption="selectedOption"
@@ -75,16 +75,16 @@
         </div>
       </div>
     </template>
-  </MrvOverlay>
+  </MorvOverlay>
 </template>
 
 <script>
-import mediaData from '@/components/mediaData.vue';
+import MediaMixin from '@/components/MediaMixin.vue';
 
 export default {
-  name: 'MrvAlbum',
+  name: 'MorvAlbum',
 
-  mixins: [mediaData],
+  mixins: [MediaMixin],
 
   props: {
     album: {

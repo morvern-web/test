@@ -18,7 +18,7 @@
         v-if="selectedItem"
         class="album-overlay-container"
       >
-        <MrvAlbum
+        <MorvAlbum
           :album="selectedItem"
           @closeOverlay="selectedItem = null"
         />
@@ -28,11 +28,11 @@
 </template>
 
 <script>
-import mediaData from '@/components/mediaData.vue';
-import jsonData from '@/components/jsonData.vue';
+import JsonData from '@/components/JsonData.vue';
+import MediaMixin from '@/components/MediaMixin.vue';
 
 export default {
-  mixins: [mediaData, jsonData],
+  mixins: [JsonData, MediaMixin],
 };
 </script>
 
