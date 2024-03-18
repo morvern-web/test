@@ -1,0 +1,1 @@
+import{_ as t,c as o,o as s,a as e}from"./index-Biq5_D8a.js";const a={},c={class:"about-container"},n=e("div",{class:"about"},[e("h1",null,"This is the about page")],-1),_=[n];function r(i,d){return s(),o("main",c,_)}const u=t(a,[["render",r]]);export{u as default};
