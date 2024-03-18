@@ -50,6 +50,7 @@ export default {
       cursor: pointer;
       width: fit-content;
       height: fit-content;
+      margin: auto;
       overflow: hidden;
       border-radius: 20px;
       .shine-effect();
@@ -57,7 +58,17 @@ export default {
       .album-artwork {
         display: block;
         width: 100%;
+        margin: auto;
       }
+    }
+  }
+}
+
+@media (width <= 600px) {
+  .music-container {
+    .music-grid {
+      grid-template-columns: unset;
+      grid-gap: 25px;
     }
   }
 }

@@ -126,6 +126,7 @@ export default {
 .album-container {
   display: flex;
   height: 100%;
+
   .album-artwork-container {
     .album-artwork {
       object-fit: contain;
@@ -143,6 +144,7 @@ export default {
     overflow: hidden;
     display: flex;
     flex-direction: column;
+
     .album-title-container {
       margin-bottom: 1rem;
       .album-title {
@@ -155,11 +157,13 @@ export default {
         font-size: 1.1rem;
       }
     }
+
     .album-info {
       overflow-y: scroll;
       flex: 1 0 0%;
       width: 100%;
       font-size: 1.1rem;
+
       .album-tracklist-container {
         color: white;
         .album-tracklist {
@@ -173,6 +177,7 @@ export default {
           }
         }
       }
+
       .album-credits-container {
         .album-credits-band {
           padding-left: 1rem;
@@ -187,6 +192,24 @@ export default {
           padding-left: 0px;
         }
       }
+    }
+  }
+}
+
+@media (width <= 600px) {
+  .album-container {
+    flex-direction: column;
+    .album-artwork-container {
+      width: 100%;
+      .album-artwork {
+        width: 100%;
+      }
+    }
+    .album-info-container {
+      margin: 0px;
+      padding: 0px;
+      border: none;
+      border-top: 1px solid grey;
     }
   }
 }

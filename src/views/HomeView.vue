@@ -44,4 +44,20 @@ export default {
     font-size: 1.2rem;
   }
 }
+
+@media (width <= 600px) {
+  .home-container {
+    height: auto;
+    min-height: 100%;
+    padding-bottom: 20px;
+    line-height: 1.5;
+    .home-title {
+      padding: 15px 0px;
+      font-size: 2.5rem;
+    }
+    .home-text {
+      padding: 0;
+    }
+  }
+}
 </style>

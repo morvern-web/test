@@ -7,7 +7,16 @@
       >
         MORVERN
       </div>
-      <div class="navigation-container">
+
+      <div
+        class="header-burger"
+        @click="burgerClick()"
+      />
+
+      <div
+        class="navigation-container"
+        :class="{ 'mobile-menu-hidden': mobileMenuHidden }"
+      >
         <div
           v-for="route in routes"
           class="navigation-item"
@@ -45,7 +54,7 @@
         :icons="linkData[0]"
         size="footer"
       />
-      <div>
+      <div class="footer-copyright">
         © 2024 Morvern
       </div>
     </div>
@@ -63,6 +72,7 @@ export default {
     return {
       currentRouteName: '',
       transitionType: 'fade-transition',
+      mobileMenuHidden: true,
     };
   },
 
@@ -101,6 +111,8 @@ export default {
         route = this.routes.find((x) => x.name === 'home');
       }
 
+      this.mobileMenuHidden = true;
+
       if (this.currentRouteName === route.name) {
         return;
       }
@@ -119,7 +131,9 @@ export default {
       }, 100);
     },
 
-    footerClick(url) {
+    burgerClick() {
+      this.mobileMenuHidden = !this.mobileMenuHidden;
+      console.log(this.mobileMenuHidden);
     },
   },
 };
@@ -153,9 +167,14 @@ header {
       .shine-effect();
     }
 
+    .header-burger {
+      display: none;
+    }
+
     .navigation-container {
       display: flex;
       justify-content: flex-end;
+      flex-wrap: wrap;
       padding-left: 20px;
 
       .navigation-item {
@@ -164,6 +183,7 @@ header {
         height: 45px;
         padding: 10px 20px;
         border-left: 1px solid grey;
+        text-align: center;
         color: var(--color-text);
         transition: color 0.5s;
         &:last-child {
@@ -214,6 +234,100 @@ footer {
     padding: 20px 40px;
     max-width: 1440px;
     margin: auto;
+  }
+}
+
+
+@media (width <= 600px) {
+  header {
+    .header-container {
+      position: relative;
+      padding: 5px 10px;
+      background: black;
+
+      .header-burger {
+        display: initial;
+        position: absolute;
+        top: 20px;
+        right: 25px;
+        height: 30px;
+        width: 30px;
+        border-radius: 50%;
+        border: 2px solid grey;
+
+        &:before {
+          display: block;
+          content: '';
+          position: relative;
+          height: calc(100% - 10px);
+          width: calc(100% - 10px);
+          top: 5px;
+          left: 5px;
+          background-color: grey;
+
+          -webkit-mask-position: center;
+          -webkit-mask-repeat: no-repeat;
+          -webkit-mask-size: contain;
+          -webkit-mask-image: url('@/assets/icons/burgermenu.svg');
+
+          mask-position: center;
+          mask-repeat: no-repeat;
+          mask-size: contain;
+          mask-image: url('@/assets/icons/burgermenu.svg');
+        }
+      }
+
+      .navigation-container {
+        position: absolute;
+        z-index: 1;
+        top: 70px;
+        left: 0;
+        padding: 5px;
+        background: black;
+        border-bottom: 2px solid grey;
+        max-height: 105px;
+        overflow: hidden;
+        transition-property: max-height, padding;
+        transition-duration: 0.2s;
+        transition-timing-function: ease-out;
+
+        .navigation-item {
+          flex: 0 0 33%;
+          border: none;
+          &:last-child {
+            border: none;
+          }
+        }
+        &.mobile-menu-hidden {
+          max-height: 0px;
+          padding: 0px 5px;
+        }
+      }
+    }
+  }
+
+  #content {
+    background-image: url('@/assets/bgm.jpg');
+    background-position: left center;
+    .content-container {
+      padding: 25px;
+      background: radial-gradient(fade(black, 60%), fade(black, 80%));
+      main {
+        overflow: scroll;
+      }
+    }
+  }
+
+  footer {
+    .footer-container {
+      flex-wrap: wrap;
+      padding: 10px 20px;
+      div {
+        flex: 0 0 100%;
+        justify-content: center;
+        text-align: center;
+      }
+    }
   }
 }
 </style>

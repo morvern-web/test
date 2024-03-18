@@ -120,4 +120,15 @@ export default {
     }
   }
 }
+
+@media (width <= 600px) {
+  .overlay-bg {
+    padding: 15px 0px;
+    .overlay-container {
+      width: 95%;
+      max-height: 95%;
+      padding: 35px 20px;
+    }
+  }
+}
 </style>

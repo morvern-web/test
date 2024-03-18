@@ -67,4 +67,13 @@ export default {
     }
   }
 }
+
+@media (width <= 600px) {
+  .video-container {
+    .video-grid {
+      grid-template-columns: unset;
+      grid-gap: 25px;
+    }
+  }
+}
 </style>
