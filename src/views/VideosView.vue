@@ -6,7 +6,7 @@
           <img
             :src="getImgSrc(video.title, 'video')"
             class="video-artwork"
-            @click="videoClick(video)"
+            @click="itemClick(video)"
           />
         </div>
         <div class="video-title">
@@ -17,12 +17,12 @@
 
     <transition name="fade-in">
       <div
-        v-if="selectedVideo"
+        v-if="selectedItem"
         class="video-overlay-container"
       >
         <MrvVideo
-          :id="selectedVideo.id"
-          @closeOverlay="selectedVideo = null"
+          :id="selectedItem.id"
+          @closeOverlay="selectedItem = null"
         />
       </div>
     </transition>
@@ -30,33 +30,11 @@
 </template>
 
 <script>
-import assetData from '@/components/assetData.vue';
+import mediaData from '@/components/mediaData.vue';
 import jsonData from '@/components/jsonData.vue';
 
 export default {
-  mixins: [assetData, jsonData],
-
-  data() {
-    return {
-      selectedVideo: null,
-    };
-  },
-
-  computed: {
-    isSelected() {
-      return (video) => video === this.selectedVideo;
-    },
-  },
-
-  methods: {
-    videoClick(video) {
-      if (this.isSelected(video)) {
-        this.selectedVideo = null;
-      } else {
-        this.selectedVideo = video;
-      }
-    },
-  },
+  mixins: [mediaData, jsonData],
 };
 </script>
 

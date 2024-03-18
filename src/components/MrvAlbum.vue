@@ -79,12 +79,12 @@
 </template>
 
 <script>
-import assetData from '@/components/assetData.vue';
+import mediaData from '@/components/mediaData.vue';
 
 export default {
   name: 'MrvAlbum',
 
-  mixins: [assetData],
+  mixins: [mediaData],
 
   props: {
     album: {

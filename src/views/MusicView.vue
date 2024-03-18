@@ -8,19 +8,19 @@
         <img
           :src="getImgSrc(album.title)"
           class="album-artwork"
-          @click="albumClick(album)"
+          @click="itemClick(album)"
         />
       </div>
     </div>
 
     <transition name="fade-in">
       <div
-        v-if="selectedAlbum"
+        v-if="selectedItem"
         class="album-overlay-container"
       >
         <MrvAlbum
-          :album="selectedAlbum"
-          @closeOverlay="selectedAlbum = null"
+          :album="selectedItem"
+          @closeOverlay="selectedItem = null"
         />
       </div>
     </transition>
@@ -28,33 +28,11 @@
 </template>
 
 <script>
-import assetData from '@/components/assetData.vue';
+import mediaData from '@/components/mediaData.vue';
 import jsonData from '@/components/jsonData.vue';
 
 export default {
-  mixins: [assetData, jsonData],
-
-  data() {
-    return {
-      selectedAlbum: null,
-    };
-  },
-
-  computed: {
-    isSelected() {
-      return (album) => album === this.selectedAlbum;
-    },
-  },
-
-  methods: {
-    albumClick(album) {
-      if (this.isSelected(album)) {
-        this.selectedAlbum = null;
-      } else {
-        this.selectedAlbum = album;
-      }
-    },
-  },
+  mixins: [mediaData, jsonData],
 };
 </script>
 
