@@ -51,12 +51,13 @@ export default {
 <style lang="less" scoped>
 .icon-container {
   display: flex;
+  flex-wrap: wrap;
 
   .icon {
     cursor: pointer;
     height: 40px;
     width: 40px;
-    margin-top: 10px;
+    margin-top: 5px;
     margin-left: 5px;
     margin-right: 5px;
     border: 2px solid grey;

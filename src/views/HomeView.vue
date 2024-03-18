@@ -1,5 +1,5 @@
 <template>
-  <main>
+  <main class="home-container">
     <div class="home-title">
       {{ newsData[0]?.title?.toUpperCase() }}
     </div>
@@ -20,10 +20,10 @@ export default {
 </script>
 
 <style lang="less" scoped>
-main {
+.home-container {
   height: 100%;
-  max-width: 1440px;
-  margin: 0px auto;
+  max-width: 1280px;
+  margin: auto;
   display: flex;
   flex-direction: column;
   justify-content: center;

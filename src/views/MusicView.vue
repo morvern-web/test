@@ -1,14 +1,16 @@
 <template>
   <main class="music-container">
-    <div v-for="album in musicData">
+    <div class="music-grid">
       <div
-        class="album-artwork"
-        :class="[
-          getClass(album.title),
-          { 'selected': isSelected(album) }
-        ]"
-        @click="albumClick(album)"
-      />
+        v-for="album in musicData"
+        class="album-entry"
+      >
+        <img
+          :src="`src/assets/music/${getSrc(album.title)}.jpg`"
+          class="album-artwork"
+          @click="albumClick(album)"
+        />
+      </div>
     </div>
 
     <transition name="fade-in">
@@ -38,9 +40,9 @@ export default {
   },
 
   computed: {
-    getClass() {
+    getSrc() {
       return (title) => {
-        return title.toLowerCase().replaceAll(' ', '').replace(/[.,'()]/g, '');
+        return title.toLowerCase().replaceAll(' ', '').replace(/[.,'()0-9]/g, '');
       };
     },
 
@@ -63,52 +65,27 @@ export default {
 
 <style lang="less" scoped>
 .music-container {
-  max-width: 1440px;
+  max-width: 1280px;
   margin: auto;
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  grid-template-rows: repeat(2, 1fr);
-  grid-gap: 75px;
 
-  .album-artwork {
-    cursor: pointer;
-    width: 100%;
-    height: 100%;
-    border-radius: 20px;
-    background-size: cover;
-    background-repeat: no-repeat;
-    background-position: center;
-    .shine-effect();
-  }
-}
+  .music-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-gap: 50px;
 
-.music-container::before {
-  content: '';
-  width: 0;
-  padding-bottom: 100%;
-  grid-row: 1 / 1;
-  grid-column: 1 / 1;
-}
-.music-container > *:first-child {
-  grid-row: 1 / 1;
-  grid-column: 1 / 1;
-}
+    .album-entry {
+      cursor: pointer;
+      width: fit-content;
+      height: fit-content;
+      overflow: hidden;
+      border-radius: 20px;
+      .shine-effect();
 
-.album-artwork {
-  &.captaintrips {
-    background-image: url('@/assets/music/captaintrips.jpg');
+      .album-artwork {
+        display: block;
+        width: 100%;
+      }
+    }
   }
-  &.celicalive23 {
-    background-image: url('@/assets/music/celicalive23.jpg');
-  }
-  &.kingtoro {
-    background-image: url('@/assets/music/kingtoro.jpg');
-  }
-  &.livefromthehomeoffreedom {
-    background-image: url('@/assets/music/livefromthehomeoffreedom.jpg');
-  }
-  &.welcometohell {
-    background-image: url('@/assets/music/welcometohell.jpg');
-  }  
 }
 </style>

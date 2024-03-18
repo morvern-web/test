@@ -62,7 +62,7 @@ export default {
   data() {
     return {
       currentRouteName: '',
-      transitionType: 'slide-left-transition',
+      transitionType: 'fade-transition',
     };
   },
 
@@ -82,15 +82,13 @@ export default {
     const content = document.querySelector('.content-container');
     setTimeout(() => {
       content.classList.remove('fade-in');
-    }, 10);
 
-    setTimeout(() => {
       if (this.$router.currentRoute._value.name) {
         this.currentRouteName = this.$router.currentRoute._value.name;
       } else {
         this.currentRouteName = 'home';
       }
-    }, 50);
+    }, 100);
   },
 
   methods: {

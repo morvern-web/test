@@ -67,6 +67,8 @@ export default {
 
   .overlay-container {
     position: relative;
+    flex: 1 0 1%;
+    max-height: 550px;
     width: 90%;
     max-width: 1000px;
     margin: auto;

@@ -3,9 +3,9 @@
     <template v-slot:default>
       <div class="album-container">
         <div class="album-artwork-container">
-          <div
+          <img
             class="album-artwork"
-            :class="getClass(album.title)"
+            :src="`src/assets/music/${getSrc(album.title)}.jpg`"
           />
           <MrvIcons
             :icons="albumOptions(album)"
@@ -96,9 +96,9 @@ export default {
   },
 
   computed: {
-    getClass() {
+    getSrc() {
       return (title) => {
-        return title.toLowerCase().replaceAll(' ', '').replace(/[.,'()]/g, '');
+        return title.toLowerCase().replaceAll(' ', '').replace(/[.,'()0-9]/g, '');
       };
     },
 
@@ -127,10 +127,12 @@ export default {
 <style lang="less" scoped>
 .album-container {
   display: flex;
+  height: 100%;
   .album-artwork-container {
-    flex: 0 0 450px;
     .album-artwork {
-      height: 450px;
+      object-fit: contain;
+      height: calc(100% - 52px);
+      border-radius: 20px;
     }
   }
 
@@ -144,8 +146,9 @@ export default {
     display: flex;
     flex-direction: column;
     .album-title-container {
-      margin-bottom: 1.5rem;
+      margin-bottom: 1rem;
       .album-title {
+        margin-right: 25px;
         font-size: 1.6rem;
         font-weight: 900;
         color: white;
@@ -155,6 +158,7 @@ export default {
       }
     }
     .album-info {
+      overflow-y: scroll;
       flex: 1 0 0%;
       width: 100%;
       font-size: 1.1rem;
@@ -187,30 +191,5 @@ export default {
       }
     }
   }
-}
-
-.album-artwork {
-  width: 100%;
-  height: 100%;
-  border-radius: 20px;
-  background-size: cover;
-  background-repeat: no-repeat;
-  background-position: center;
-
-  &.captaintrips {
-    background-image: url('@/assets/music/captaintrips.jpg');
-  }
-  &.celicalive23 {
-    background-image: url('@/assets/music/celicalive23.jpg');
-  }
-  &.kingtoro {
-    background-image: url('@/assets/music/kingtoro.jpg');
-  }
-  &.livefromthehomeoffreedom {
-    background-image: url('@/assets/music/livefromthehomeoffreedom.jpg');
-  }
-  &.welcometohell {
-    background-image: url('@/assets/music/welcometohell.jpg');
-  }  
 }
 </style>

@@ -81,22 +81,26 @@ export default {
 
 <style>
 .live-container {
-  max-width: 1440px;
+  max-width: 1280px;
   margin: auto;
+
   .live-group {
     &:not(:last-child) {
       padding-bottom: 25px;
       border-bottom: 3px solid white;
       margin-bottom: 40px;
     }
+
     .live-group-header {
       padding-bottom: 25px;
       font-size: 2rem;
       font-weight: bold;
       color: white;
     }
+
     .live-date-group {
       margin-bottom: 25px;
+
       .live-date-header {
         padding-left: 5px;
         padding-bottom: 5px;
@@ -104,6 +108,7 @@ export default {
         font-size: 1.5rem;
         font-weight: bold;
       }
+
       .live-date-entry {
         color: white;
         font-size: 1.1rem;

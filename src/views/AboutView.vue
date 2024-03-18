@@ -1,11 +1,17 @@
 <template>
-  <div class="about">
-    <h1>This is an about page</h1>
-  </div>
+  <main class="about-container">
+    <div class="about">
+      <h1>This is the about page</h1>
+    </div>
+  </main>
 </template>
 
 <script>
 </script>
 
 <style>
+.about-container {
+  max-width: 1280px;
+  margin: auto;
+}
 </style>

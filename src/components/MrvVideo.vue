@@ -32,6 +32,7 @@ export default {
   position: relative;
   padding-bottom: 56.25%; /* 16:9 */
   height: 0;
+  margin: auto;
   iframe {
     position: absolute;
     top: 0;
