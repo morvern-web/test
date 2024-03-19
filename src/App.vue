@@ -42,7 +42,9 @@
           :name="transitionType"
           mode="out-in"
         >
-          <component :is="Component" />
+          <KeepAlive>
+            <component :is="Component" />
+          </KeepAlive>
         </transition>
       </RouterView>
     </div>
