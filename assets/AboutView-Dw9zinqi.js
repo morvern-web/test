@@ -1,0 +1,1 @@
+import{_ as s,c as t,o as a,p as c,f as _,a as o}from"./index-dPAADywA.js";const d={},n=e=>(c("data-v-6d765957"),e=e(),_(),e),i={class:"about-container"},p=n(()=>o("div",{class:"about"},[o("h1",null,"This is the about page")],-1)),r=[p];function h(e,u){return a(),t("main",i,r)}const f=s(d,[["render",h],["__scopeId","data-v-6d765957"]]);export{f as default};
