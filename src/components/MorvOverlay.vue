@@ -121,13 +121,25 @@ export default {
   }
 }
 
+
 @media (width <= 600px) {
   .overlay-bg {
     padding: 15px 0px;
     .overlay-container {
-      width: 95%;
+      flex: unset;
       max-height: 95%;
-      padding: 35px 20px;
+      width: 95%;
+      padding: 15px 10px;
+    }
+  }
+}
+
+
+@media (height <= 600px) {
+  .overlay-bg {
+    padding: 10px 0px;
+    .overlay-container {
+      padding: 10px 15px;
     }
   }
 }

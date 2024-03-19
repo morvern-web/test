@@ -68,6 +68,16 @@ export default {
   }
 }
 
+
+@media (width <= 800px) {
+  .video-container {
+    .video-grid {
+      grid-template-columns: repeat(2, 1fr);
+    }
+  }
+}
+
+
 @media (width <= 600px) {
   .video-container {
     .video-grid {

@@ -79,7 +79,7 @@ export default {
 };
 </script>
 
-<style>
+<style lang="less" scoped>
 .live-container {
   max-width: 1280px;
   margin: auto;
@@ -110,12 +110,25 @@ export default {
       }
 
       .live-date-entry {
+        background-color: fade(black, 50%);
         color: white;
         font-size: 1.1rem;
-        padding: 5px 10px;
+        padding: 10px 15px;
         border-bottom: 1px dotted grey;
         &:last-child {
           border-bottom: 2px solid grey;
+        }
+      }
+    }
+  }
+}
+
+@media (width <= 600px) {
+  .live-container {
+    .live-group {
+      .live-date-group {
+        .live-date-entry {
+          padding: 10px;
         }
       }
     }

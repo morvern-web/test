@@ -42,4 +42,13 @@ export default {
     border-radius: 20px;
   }
 }
+
+
+@media (width <= 600px) {
+  .video-container {
+    height: 0px;
+    width: 100%;
+    padding-bottom: 56.25%;
+  }
+}
 </style>

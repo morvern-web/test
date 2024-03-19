@@ -64,6 +64,16 @@ export default {
   }
 }
 
+
+@media (width <= 800px) {
+  .music-container {
+    .music-grid {
+      grid-template-columns: repeat(2, 1fr);
+    }
+  }
+}
+
+
 @media (width <= 600px) {
   .music-container {
     .music-grid {

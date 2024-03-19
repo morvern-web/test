@@ -52,7 +52,7 @@
     <div class="footer-container">
       <MorvIcons
         :icons="linkData[0]"
-        size="footer"
+        size="small"
       />
       <div class="footer-copyright">
         © 2024 Morvern
@@ -133,7 +133,6 @@ export default {
 
     burgerClick() {
       this.mobileMenuHidden = !this.mobileMenuHidden;
-      console.log(this.mobileMenuHidden);
     },
   },
 };
@@ -238,7 +237,7 @@ footer {
 }
 
 
-@media (width <= 600px) {
+@media (width <= 800px) {
   header {
     .header-container {
       position: relative;
@@ -282,6 +281,7 @@ footer {
         z-index: 1;
         top: 70px;
         left: 0;
+        right: 0;
         padding: 5px;
         background: black;
         border-bottom: 2px solid grey;
@@ -292,10 +292,12 @@ footer {
         transition-timing-function: ease-out;
 
         .navigation-item {
-          flex: 0 0 33%;
-          border: none;
+          flex: 0 0 15%;
+          &:first-child {
+            border-left: none;
+          }
           &:last-child {
-            border: none;
+            border-right: none;
           }
         }
         &.mobile-menu-hidden {
@@ -307,10 +309,37 @@ footer {
   }
 
   #content {
-    background-image: url('@/assets/bgm.jpg');
-    background-position: left center;
     .content-container {
       padding: 25px;
+    }
+  }
+
+  footer {
+    .footer-container {
+      padding: 15px 25px;
+    }
+  }
+}
+
+
+@media (width <= 600px) {
+  header {
+    .header-container {
+      .navigation-container {
+        .navigation-item {
+          flex: 0 0 33%;
+          border: none;
+          &:last-child {
+            border: none;
+          }
+        }
+      }
+    }
+  }
+
+  #content {
+    background-image: url('@/assets/bgm.jpg');
+    .content-container {
       background: radial-gradient(fade(black, 60%), fade(black, 80%));
       main {
         overflow: scroll;
@@ -320,8 +349,8 @@ footer {
 
   footer {
     .footer-container {
+      padding: 5px;
       flex-wrap: wrap;
-      padding: 10px 20px;
       div {
         flex: 0 0 100%;
         justify-content: center;

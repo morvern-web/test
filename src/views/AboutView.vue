@@ -9,7 +9,7 @@
 <script>
 </script>
 
-<style>
+<style lang="less" scoped>
 .about-container {
   max-width: 1280px;
   margin: auto;

@@ -90,6 +90,16 @@ export default {
     }
   }
 
+  .cover {
+    &:before {
+      height: calc(100% - 12px);
+      width: calc(100% - 12px);
+      top: 6px;
+      left: 6px;
+      -webkit-mask-image: url('@/assets/icons/cover.svg');
+      mask-image: url('@/assets/icons/cover.svg');
+    }
+  }
 
   .tracklist {
     &:before {
@@ -101,6 +111,7 @@ export default {
       mask-image: url('@/assets/icons/tracklist.svg');
     }
   }
+
   .credits {
     &:before {
       height: calc(100% - 10px);
@@ -111,6 +122,7 @@ export default {
       mask-image: url('@/assets/icons/credits.svg');
     }
   }
+
   .bandcamp, .spotify {
     background-color: grey;
     &:before {
@@ -127,6 +139,7 @@ export default {
       }
     }
   }
+
   .applemusic {
     &:before {
       height: calc(100% - 8px);
@@ -137,12 +150,14 @@ export default {
       mask-image: url('@/assets/icons/applemusic.svg');
     }
   }
+
   .bandcamp {
     &:before {
       -webkit-mask-image: url('@/assets/icons/bandcamp.svg');
       mask-image: url('@/assets/icons/bandcamp.svg');
     }
   }
+
   .deezer {
     &:before {
       height: calc(100% - 10px);
@@ -153,12 +168,14 @@ export default {
       mask-image: url('@/assets/icons/deezer.svg');
     }
   }
+
   .instagram {
     &:before {
       -webkit-mask-image: url('@/assets/icons/instagram.svg');
       mask-image: url('@/assets/icons/instagram.svg');
     }
   }
+
   .linktree {
     &:before {
       height: calc(100% - 8px);
@@ -169,12 +186,14 @@ export default {
       mask-image: url('@/assets/icons/linktree.svg');
     }
   }
+
   .spotify {
     &:before {
       -webkit-mask-image: url('@/assets/icons/spotify.svg');
       mask-image: url('@/assets/icons/spotify.svg');
     }
   }
+
   .youtube {
     &:before {
       -webkit-mask-image: url('@/assets/icons/youtube.svg');
@@ -183,10 +202,38 @@ export default {
   }
 
 
-  .footer {
-    margin: 0 5px;
+  .small {
+    margin: 5px;
+    margin-bottom: 0;
     height: 30px;
     width: 30px;
+
+    &.cover {
+      &:before {
+        height: calc(100% - 10px);
+        width: calc(100% - 10px);
+        top: 5px;
+        left: 5px;
+      }
+    }
+
+    &.tracklist {
+      &:before {
+        height: calc(100% - 10px);
+        width: calc(100% - 10px);
+        top: 5px;
+        left: 5px;
+      }
+    }
+
+    &.credits {
+      &:before {
+        height: calc(100% - 8px);
+        width: calc(100% - 8px);
+        top: 4px;
+        left: 4px;
+      }
+    }
 
     &.bandcamp, &.spotify {
       &:before {
